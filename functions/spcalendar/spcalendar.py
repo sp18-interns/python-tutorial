@@ -43,28 +43,18 @@ def decode_month(month = 0):
 
     #return (z, ":", calendar.month_name[z.month])
 
-#
-# def decode_day(day=''):
-#     """
-#     DESCRIPTION - Convert weekday into int
-#     INPUT - Weekday given/generated as input
-#     OUTPUT - Convert weekday into integer
-#     """
-#
-#     if day == 'monday':
-#         return 1
-#     elif day == 'tuesday':
-#         return 2
-#     elif day == 'wednesday':
-#         return 3
-#     elif day == 'thursday':
-#         return 4
-#     elif day == 'friday':
-#         return 5
-#     elif day == 'saturday':
-#         return 6
-#     elif day == 'sunday':
-#         return 7
+
+def decode_day(day=''):
+    """
+    DESCRIPTION - Convert weekday into int
+    INPUT - Weekday given/generated as input
+    OUTPUT - Convert weekday into integer
+    """
+
+    day = ['MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY']
+
+
+
 
 
 

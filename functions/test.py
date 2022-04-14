@@ -1,6 +1,6 @@
 from faker import Faker
 
-from functions.spcalendar.spdate import SPDate
+from spcalendar.spdate import SPDate
 from spcalendar.spcalendar import is_leap
 from spcalendar.spcalendar import number_of_days_in_month
 from spcalendar.spcalendar import odd_days_in_month

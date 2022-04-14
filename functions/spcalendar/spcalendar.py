@@ -65,17 +65,9 @@ def odd_days_in_century(century=0):
     Output: integer(total no of odd days in a century)
     """
     # TODO: Rework the logic
-    # count_odd = 0
-    # count_leap = 0
-    # for year in range(century - 100, century):
-    #     if is_leap(year):
-    #         count_leap += 1
-    # total_days = 36500 + count_leap
-    # for day in range(1, total_days + 1):
-    #     if day % 2 != 0:
-    #         count_odd += 1
-    #
-    # return count_odd
+    if century%400==0:
+        return 0
+    return (century*365)%7
 
 
 def decode_month(month=0):

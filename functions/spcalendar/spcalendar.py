@@ -1,5 +1,6 @@
 from calendar import monthrange
 import datetime
+import re
 
 
 def is_leap(year):
@@ -12,18 +13,49 @@ def is_leap(year):
     return ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0)
 
 
-def number_of_days_in_month(year=0, month=0):
-    return monthrange(year, month)[1]
+def number_of_days_in_month(month=0, year=0):
+    if month <= 0 or year <= 0:
+        print("ERROR: month/year invalid. Please send positive values for month and year.")
+        return -1
+
+    dic = {1: ['January', 31], 2: ['February', 28], 3: ['March', 31], 4: ['April', 30], 5: ['May', 31], 6: ['June', 30], 7: [
+        'July', 31], 8: ['August', 31], 9: ['September', 30], 10: ['October', 31], 11: ['November', 30], 12: ['December', 31]}
+
+    if is_leap(year) and month == 2:
+        return dic[2][1] + 1
+
+    return dic[month][1]
 
 
-def odd_days_in_month(year=0, month=0):
+# def number_of_days_in_month(month, year):
+#     """
+#     Description: Given an integer month and year as input, return the days in that month of that year.
+#     Do consider that if the year is leap, it should return 29 days for February.
+#     """
+#     if month <= 0 or year <= 0:
+#         print("ERROR: month/year invalid. Please send positive values for month and year.")
+#         return -1
+#     if month in (1, 3, 5, 7, 8, 10, 12):
+#         return 31
+#     elif month in (4, 6, 9, 11):
+#         return 30
+#     elif month == 2:
+#         if is_leap(year):
+#             return 29
+#         return 28
+#     else:
+#         print(
+#             "ERROR: month invalid. Out of bound value for month. Valid range [1-12].")
+
+
+def odd_days_in_month(month=0,year=0):
     """
     Description: Given an integer month in input,it should return an integer 
     signifying the total no. of odd days in the month.
     Input: month(integer)
     Output: integer(total no of odd days)
     """
-    no_of_days_in_month = number_of_days_in_month(year, month)
+    no_of_days_in_month = number_of_days_in_month(month,year)
     count_odd = 0
     for day in range(1, no_of_days_in_month+1):
         if day % 2 != 0:

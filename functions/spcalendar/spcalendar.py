@@ -16,15 +16,16 @@ def number_of_days_in_month(year=0, month=0):
     return monthrange(year, month)[1]
 
 
-def odd_days_in_month(month=0):
+def odd_days_in_month(year=0, month=0):
     """
     Description: Given an integer month in input,it should return an integer 
     signifying the total no. of odd days in the month.
     Input: month(integer)
     Output: integer(total no of odd days)
     """
+    no_of_days_in_month = number_of_days_in_month(year, month)
     count_odd = 0
-    for day in range(month):
+    for day in range(1, no_of_days_in_month+1):
         if day % 2 != 0:
             count_odd += 1
     return count_odd
@@ -39,11 +40,11 @@ def odd_days_in_century(century=0):
     """
     count_odd = 0
     count_leap = 0
-    for year in range(century-100,century):
+    for year in range(century-100, century):
         if is_leap(year) == True:
             count_leap += 1
     total_days = 36500 + count_leap
-    for day in range(1,total_days+1):
+    for day in range(1, total_days+1):
         if day % 2 != 0:
             count_odd += 1
 

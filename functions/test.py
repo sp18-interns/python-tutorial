@@ -4,6 +4,8 @@ from spcalendar.spcalendar import number_of_days_in_month
 from spcalendar.spcalendar import odd_days_in_month
 from spcalendar.spcalendar import odd_days_in_century
 from spcalendar.spcalendar import decode_month
+from spcalendar.spcalendar import decode_day
+import datetime
 
 import random
 
@@ -26,3 +28,5 @@ print(f'The century is {century}')
 print(f'The no. of odd days in {century} is {odd_days_in_century(century)}')
 
 print(f"Decode Month to string :  - {decode_month(dt.month)}")
+
+print()

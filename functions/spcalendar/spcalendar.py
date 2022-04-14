@@ -25,7 +25,7 @@ def odd_days_in_month(year=0, month=0):
     """
     no_of_days_in_month = number_of_days_in_month(year, month)
     count_odd = 0
-    for day in range(1, no_of_days_in_month+1):
+    for day in range(1, no_of_days_in_month + 1):
         if day % 2 != 0:
             count_odd += 1
     return count_odd
@@ -40,11 +40,11 @@ def odd_days_in_century(century=0):
     """
     count_odd = 0
     count_leap = 0
-    for year in range(century-100, century):
+    for year in range(century - 100, century):
         if is_leap(year) == True:
             count_leap += 1
     total_days = 36500 + count_leap
-    for day in range(1, total_days+1):
+    for day in range(1, total_days + 1):
         if day % 2 != 0:
             count_odd += 1
 
@@ -85,17 +85,47 @@ def decode_month(month=0):
     # return (z, ":", calendar.month_name[z.month])
 
 
-def decode_day(day=''):
+def decode_day_int(isoweekday=''):
     """
     DESCRIPTION - Convert weekday into int
     INPUT - Weekday given/generated as input
     OUTPUT - Convert weekday into integer
     """
 
-    day = ['MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY','SUNDAY']
+    if isoweekday == "Monday":
+        return 1
+    elif isoweekday == "Tuesday":
+        return 2
+    elif isoweekday == "Wednesday":
+        return 3
+    elif isoweekday == "Thursday":
+        return 4
+    elif isoweekday == "Friday":
+        return 5
+    elif isoweekday == "Saturday":
+        return 6
+    elif isoweekday == "Sunday":
+        return 7
 
 
+def decode_day_str(isoweekday=0):
+    """
+    DESCRIPTION - Convert weekday into int
+    INPUT - Weekday given/generated as input
+    OUTPUT - Convert weekday into integer
+    """
 
-
-
-
+    if isoweekday == 1:
+        return "Monday"
+    elif isoweekday == 2:
+        return "Tuesday"
+    elif isoweekday == 3:
+        return "Wednesday"
+    elif isoweekday == 4:
+        return "Thursday"
+    elif isoweekday == 5:
+        return "Friday"
+    elif isoweekday == 6:
+        return "Saturday"
+    elif isoweekday == 7:
+        return "Sunday"

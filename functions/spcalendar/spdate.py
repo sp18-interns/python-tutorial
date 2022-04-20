@@ -1,3 +1,7 @@
+from spcalendar.spcalendar import decode_day_str
+
+
+isoweekday =0
 class SPDate:
 
     def __init__(self, year: int, month: int, day: int):
@@ -5,10 +9,14 @@ class SPDate:
         self.month = month
         self.day = day
         # TODO: Implement isoweekday logic
-        self.isoweekday = None
+        self.isoweekday = decode_day_str(isoweekday)
 
     def __str__(self) -> str:
-        return f"{self.day}-{self.month}-{self.year}"
+        return f"{self.day}/{self.month}/{self.year}"
+
+
+
+
 
     def __del__(self):
-        pass
+        print('Destructor called, SPDate deleted.')

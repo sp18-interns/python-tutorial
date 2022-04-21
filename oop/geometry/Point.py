@@ -1,16 +1,19 @@
 class Point:
     """
-    Point class
-    @todo : Rephrase the docstring
+
+    @todo : Rephrase the docstring         
+    Create a new Point object from the given float numbers,and assign a label to the point object created.
     """
 
     def __init__(self, x, y, label):
         """
 
-        @param x:
-        @param y:
-        @param label:
+        @param x: Value for the x-coordinate of the point object. Type - float()
+        @param y: Value for the y-coordinate of the point object. Type - float()
+        @param label: Value for the label of the point object. Type - str()
         """
+        assert type(x) == float() and type(y) == float() and type(
+            label) == str(), "2 float and 1 string expected respectively"
         self.x = x
         self.y = y
         self.label = label
@@ -22,64 +25,71 @@ class Point:
     def set_x(self, x):
         """
 
-        @param x:
-        @return:
+        @param x: Value to set the new value of x-coordinate. Type - float()
+        @return: None
         """
+        assert type(x) == float(), "Float object expected."
         self.x = x
 
     def get_x(self):
         """
 
-        @return:
+        @return: Value of the x-coordinate of point object.
         """
         return self.x
 
     def set_y(self, y):
         """
 
-        @param y:
-        @return:
+        @param y: Value to set the new value of y-coordinate. Type - float()
+        @return: None
         """
+        assert type(y) == float(), "Float object expected."
         self.y = y
 
     def get_y(self):
         """
 
-        @return:
+        @return: Value of the y-coordinate of point object.
         """
         return self.y
 
     def set_label(self, label):
         """
 
-        @param label:
-        @return:
+        @param label: Value to set the new label of point object. Type - str()
+        @return: None
+
         """
+        assert type(label) == str(), "String object expected."
         self.label = label
 
     def get_label(self):
         """
 
-        @return:
+        @return: Value of the label of the point object.
         """
         return self.label
 
     # TODO assertion datatype
     # TODO if x & y is 0 then point will not move
 
-    def move(self, x=0, y=0):
+    def move_coordinate_by(self, x=0.0, y=0.0):
         """
 
-        @param x:
-        @param y:
-        @return:
+        @param x: Value to move the x-coordinate of point. Type - Float() 
+        @param y: Value to move the y-coordinate of point. Type - Float()
+        @return:  
         """
+        assert type(x) == float() and type(y) == float(
+        ), "Only int or float allowed"       # TODO DONE
         self.x = self.x + x
         self.y = self.y + y
-        print(f'Moving x Co-ordinate by {x} & y Co-ordinate by {y}')
+        print(
+            f'Moving x Co-ordinate by {x} & y Co-ordinate by {y} makes the new point location as :{self}')
 
     def check_quadrant(self):
-        """
+        """                     
 
         @return:
         """

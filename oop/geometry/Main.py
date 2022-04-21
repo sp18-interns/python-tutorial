@@ -1,11 +1,11 @@
 from Point import Point
 
 if __name__ == '__main__':
-    yash = Point(3, 4, "Yash")
-    parag = Point(-2, 4, "Parag")
-    chirag = Point(3, -4, "Chirag")
-    sumit = Point(-3, -4, "Sumit")
-    bachha = Point(0, 0, "Bachha")
+    yash = Point(3.0, 4.0, "Yash")
+    parag = Point(-2.0, 4.0, "Parag")
+    chirag = Point(3.0, -4.0, "Chirag")
+    sumit = Point(-3.0, -4.0, "Sumit")
+    bachha = Point(0.0, 0.0, "Bachha")
     print(yash)
     print('*' * 100)
     print(f"The x coordinate of point {yash.label} is {yash.get_x()}")
@@ -13,8 +13,7 @@ if __name__ == '__main__':
     print(f"The y coordinate of point {yash.label} is {yash.get_y()}")
     print('*' * 100)
     print("Increment x by 5 coordinate & y by 2 coordinate")
-    yash.move(5, 2)
-    print(yash)
+    yash.move_coordinate_by(5.0, 2.0)
     print('*' * 100)
     yash.check_quadrant()
     parag.check_quadrant()
